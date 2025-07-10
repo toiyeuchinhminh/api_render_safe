@@ -85,4 +85,6 @@ def download_csv():
     return send_file("output.csv", as_attachment=True, mimetype="text/csv")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render sẽ truyền PORT qua biến môi trường
+    app.run(host="0.0.0.0", port=port, debug=True)
+
