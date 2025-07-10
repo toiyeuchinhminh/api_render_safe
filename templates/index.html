@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Dự đoán X-ray bằng AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    label {
+      font-weight: bold;
+    }
+    textarea, input[type="number"], input[type="file"] {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔎 Gửi ảnh X-ray để AI dự đoán</h2>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <label for="question">Câu hỏi gửi đến AI:</label><br>
+    <textarea name="question" id="question" rows="3" required>
+Hình ảnh này có bệnh hay không? Chỉ trả lời 'Có bệnh (xx%)' hoặc 'Không bệnh (xx%)'
+    </textarea><br>
+
+    <label for="limit">Số lượng ảnh muốn xử lý (tối đa):</label><br>
+    <input type="number" id="limit" name="limit" value="20" min="1" max="100"><br>
+
+    <label for="images">Chọn ảnh hoặc thư mục ảnh:</label><br>
+    <input type="file" id="images" name="images" multiple webkitdirectory directory required><br>
+
+    <button type="submit">📤 Gửi và Dự đoán</button>
+  </form>
+</body>
+</html>
+

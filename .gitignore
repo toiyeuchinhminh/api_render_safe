@@ -1,0 +1,13 @@
+# Không push file chứa key
+.env
+
+# Bỏ file cache Python
+__pycache__/
+*.pyc
+
+# Bỏ file IDE
+.vscode/
+.idea/
+
+# Bỏ file CSV xuất ra
+*.csv
